@@ -1,0 +1,10 @@
+<% if obj.errors.any?%>
+<ul>
+  <li class="no">スケジュールを登録できませんでした</li>
+</ul>
+<% obj.errors.full_messages.each do |message|%>
+<ul>
+  <li><%=message%></li>
+</ul>
+<%end%>
+<%end%>
