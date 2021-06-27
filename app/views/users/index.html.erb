@@ -1,4 +1,4 @@
-<h3>スケジュール一覧</h3>
+
     <% if flash.notice %>
       <p class="notice"><%= flash.notice %></p>
       
@@ -25,16 +25,16 @@
         <% @users.each do |user| %>
           <tr>
             <td><%= user.id %></td>
-            <td><%= user.title %></td>
+            <td><%= user.name %></td>
             <td><%= user&.start_date&.strftime('%Y年%m月%d日')%></td>
             <td><%= user&.end_date&.strftime('%Y年%m月%d日') %></td>
             <td><%= user.check ? '○':' '%></td>
+            <td><%= user.password%></td>
             <td><%= user.updated_at.to_s(:datetime_jp) %></td>
             <td>
               <%= link_to "確認", user %>
             </td>
             <td>
-              <%= link_to "編集", [:edit, user] %>
             </td>
             <td>
               <%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %>

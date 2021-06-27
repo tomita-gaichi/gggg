@@ -1,0 +1,29 @@
+<% if flash.notice %>
+      <p class="notice"><%= flash.notice %></p>
+      
+    <% end %>
+<div class="container device">
+  <div class="device_frame">
+    <p class="my-4">ログイン</p>
+    <div class="device_inner">
+      <%= form_tag("/login") do %>
+        <div class="field form-row">
+          <div class="col-2 re">
+            必須
+          </div>
+          <input class="loginin" name="email" placeholder="メールアドレス"　value="<%=@email%>">
+        </div>
+        <div class="field form-row">
+          <div class="col-2 re">
+             必須
+          </div>
+            <input class="loginin" type="password" name="paswword" placeholder="パスワード" value="<%=@password%>">  
+          </div>
+        <div class="actions">
+         <input class="loginin btn" type="submit" value="ログイン">
+        </div>
+      <%end%>
+      <%=link_to"新しいアカウントを作成",:new_user, class: "login-new"%>
+    </div>
+  </div>
+</div>

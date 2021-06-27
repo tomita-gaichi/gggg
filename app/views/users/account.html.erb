@@ -1,0 +1,42 @@
+<div class="container-fiuld user">
+  <div class="row">
+    <div class="col-lg-2">
+      <ul>
+        <li class="active">
+          <%=link_to"アカウント", "/users/#{@user.id}/account"%>
+        </li>
+        <li>
+          <%=link_to"プロフィール", "/users/#{@user.id}/show"%>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-10">
+      <div class="user-view-box">
+        <div class="update-content">
+          <div class="row">
+            <h5>アカウント</h5>
+          </div>
+        </div>
+        <div class="update-content2">
+          <div class="row">
+            <label class="col-md-3">メールアドレス</label>
+            <div class="col-md-9">
+              <%=@user.email%>
+            </div>
+          </div>
+        </div>
+        <div class="update-content2">
+          <div class="row">
+            <label class="col-md-3">パスワード</label>
+            <div class="col-md-9">*********</div>
+          </div>
+        </div>
+        <div class="update-content">
+          <div class="row">
+          <%=link_to"編集","/users/#{@user.id}/edit", class: 'btn-primary loginin hen'%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
